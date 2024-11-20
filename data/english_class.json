@@ -1,0 +1,48 @@
+{
+    "전사(남)": "warrior",
+    "전사(여)": "warrior_female",
+
+    "버서커": "berserker",
+    "슬레이어": "berserker_female",
+    "디스트로이어": "destroyer",
+    "워로드": "warlord",
+    "홀리나이트": "holyknight",
+
+    "마법사": "magician",
+
+    "아르카나": "emblem_arcana",
+    "서머너": "summoner",
+    "바드": "bard",
+    "소서리스": "elemental_master",
+
+    "무도가(여)": "fighter",
+    "무도가(남)": "fighter_male",
+
+    "스트라이커": "battle_master_male",
+    "배틀마스터": "battle_master",
+    "인파이터": "infighter",
+    "브레이커": "infighter_male",
+    "기공사": "force_master",
+    "창술사": "lance_master",
+
+    "암살자": "assassin",
+
+    "블레이드": "blade",
+    "데모닉": "demonic",
+    "리퍼": "reaper",
+    "소울이터": "soul_eater",
+
+    "헌터(남)": "hunter",
+    "헌터(여)": "hunter_female",
+
+    "호크아이": "hawk_eye",
+    "데빌헌터": "devil_hunter",
+    "블래스터": "blaster",
+    "스카우터": "scouter",
+    "건슬링어": "devil_hunter_female",
+
+    "스페셜리스트": "specialist",
+
+    "도화가": "yinyangshi",
+    "기상술사": "weather_artist"
+}

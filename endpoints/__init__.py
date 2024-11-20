@@ -18,18 +18,24 @@ auth_index = 0
 stove_api_tokens = load_json('./config/stove_api.json')
 
 # Azure
-azure_config = load_json('./config/azure_config.json')
-os.environ.update(azure_config)
-retriever = AzureCognitiveSearchRetriever(content_key="content")
+try:
+    azure_config = load_json('./config/azure_config.json')
+    os.environ.update(azure_config)
+    retriever = AzureCognitiveSearchRetriever(content_key="content")
+except:
+    retriever = None
 
 # Genai
-genai_api_token = load_json('./config/genai_api.json')['api_key']
-genai.configure(api_key=genai_api_token)
-model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
-    generation_config={"temperature": 0.3, "top_p": 1, "top_k": 1, "max_output_tokens": 4096},
-    safety_settings={category: "BLOCK_NONE" for category in ["HARM_CATEGORY_HARASSMENT", "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_DANGEROUS_CONTENT"]}
-)
+try:
+    genai_api_token = load_json('./config/genai_api.json')['api_key']
+    genai.configure(api_key=genai_api_token)
+    model = genai.GenerativeModel(
+        model_name="gemini-1.5-flash",
+        generation_config={"temperature": 0.3, "top_p": 1, "top_k": 1, "max_output_tokens": 4096},
+        safety_settings={category: "BLOCK_NONE" for category in ["HARM_CATEGORY_HARASSMENT", "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_DANGEROUS_CONTENT"]}
+    )
+except:
+    model = None
 
 # Crawler cache
 SUATkey = load_json('./config/crawl_cache.json')["SUAT"]

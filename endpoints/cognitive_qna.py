@@ -4,6 +4,9 @@ from endpoints import retriever, model
 router = APIRouter()
 
 async def search_ask(query):
+    if not retriever:
+        return {"Result": "Failed", "detail": "Retriever가 설정되지 않았습니다."}
+    
     relevant = await retriever.aget_relevant_documents(query)
     
     if len(relevant) > 0:
